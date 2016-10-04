@@ -16,6 +16,7 @@ let type;
 let maxHours;
 let minHours;
 let interval;
+let hour = 1000 * 60 * 60; 
 
 function randomizer(max, min){
 	return Math.floor(Math.random()*max + min);
@@ -25,11 +26,11 @@ function appriciateSleep(){
 	//time is counted from server so take that into account
 	let time = new Date().getHours();
 	if(time > 8 && time < 22){
-		maxHours = 1000*60*4;
-		minHours = 1000*60*1;
+		maxHours = hour*4;
+		minHours = hour*1;
 	}else{
-		maxHours = 1000*60*10;
-		minHours = 1000*60*10;
+		maxHours = hour*10;
+		minHours = hour*10;
 	}
 	return [maxHours, minHours];
 }
